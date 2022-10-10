@@ -23,7 +23,7 @@ import (
 )
 
 func main() {
-	log := log.New(os.Stdout, "REPOWATCHDOG", log.LstdFlags)
+	log := log.New(os.Stdout, "REPOWATCHDOG ", log.LstdFlags)
 
 	if err := Run(log); err != nil {
 		log.Fatal(err)
@@ -33,7 +33,7 @@ func main() {
 
 func Run(logger *log.Logger) error {
 	fmt.Println("starting prog...")
-	//GHSecret := os.Getenv("HOOK")
+	GHSecret := os.Getenv("HOOK")
 
 	//k8s clientset
 	clientset, err := CreateK8sClientset()
@@ -42,7 +42,7 @@ func Run(logger *log.Logger) error {
 	}
 
 	// create a new event handler and pass the secret
-	handle := githubevents.New("")
+	handle := githubevents.New(GHSecret)
 
 	handle.OnPullRequestEventOpened(
 		func(deliveryID string, eventName string, event *github.PullRequestEvent) error {
