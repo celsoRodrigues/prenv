@@ -1,10 +1,10 @@
 # Self-Served Dynamic Environments for airflow
 
-This project creates a webhook listener for pull requests and acts on every create and delete
+This project creates a webhook listener for pull requests and acts on every create and close of PR's
 
 ## Dependencies
-*Docker
-*kubernetes cluster
+- Docker
+- kubernetes cluster
 
 ## Installation
 
