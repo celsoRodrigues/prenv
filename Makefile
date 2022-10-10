@@ -14,7 +14,7 @@ docker-build:
 docker-push:
 	docker push ${ADDR}/${BINARY_NAME}:${VERSION}
 
-dbp: docker-build docker-push
+install: docker-build docker-push
 	helm upgrade -i -f ./chart/repowatchdog/values.yaml repowatchdog ./chart/repowatchdog/
 
 createsecret:
