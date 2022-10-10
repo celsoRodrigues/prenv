@@ -81,7 +81,7 @@ func Run(logger *log.Logger) error {
 
 	})
 
-	// start the server listening on port 8080
+	// start the server listening on port 8000
 	if err := http.ListenAndServe(":8000", nil); err != nil {
 		panic(err)
 	}
