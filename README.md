@@ -10,7 +10,8 @@ This project creates a webhook listener for pull requests and acts on every crea
 * Configure gihub webhook
 
 - Under your repo webhook section, create a webhook pointing to your server's ingress
-- Add your hostname in the values.yaml file.
+- Add your hostname in the values.yaml file in chart/repowatchdog/values.yaml.
+
 
 * Create webhook Secret - This is the secret you will need to add to your github webhook configuration
 
